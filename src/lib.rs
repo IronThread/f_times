@@ -20,17 +20,18 @@ impl FTimes {
     }
 
     pub fn next(&mut self) -> bool {
-        if self.x < 1.0 {
+        if self.x <= 1.0 {
             self.x = self.trunc_part;
             true
         } else {
-            self.x -= self.trunc_part;
-            self.y += self.fract_part;
+            self.x -= 1.0;
 
             if self.y >= 1.0 {
                 self.y -= 1.0;
                 self.x += 1.0;
             } 
+
+            self.y += self.fract_part;
 
             false
         }
@@ -79,13 +80,13 @@ mod tests {
     
         let mut e = FTimes::new(PI);
 
-        for _ in 0..100 {
+        for _ in 0..300 {
             if e.next() {
                 num += 1;
             }
         }
 
-        assert_eq!(num, 53);
+        assert_eq!(90, num);
     }
 
 }
