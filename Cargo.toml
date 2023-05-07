@@ -1,0 +1,12 @@
+[package]
+name = "f_times" 
+version = "0.1.0"
+authors = ["IronThread <santinofuenteskillian@gmail.com>"]
+edition = "2018"
+license = "Apache-2.0/MIT"
+readme = "README.md"
+description = "Simple crate offering a way to do something float times."
+repository = "https://github.com/IronThread/f_times"
+keywords = ["float","times","boolean"]
+
+[dependencies]
